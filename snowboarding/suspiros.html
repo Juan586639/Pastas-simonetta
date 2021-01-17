@@ -240,9 +240,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<option>5</option>
 									<option>6</option>
 								</select>
-							</ul>
-							<button type="submit" name="Submit" class="exclusive">
-							   <span>Add to cart</span>
+							</ul><script>
+								var data;
+								function Add(){
+									data = "suspiros%20*%201---"+sessionStorage.getItem("ShopData", data);
+									sessionStorage.setItem("ShopData", data);
+								}
+								function Send(){
+									var dataToSend = sessionStorage.getItem("ShopData", data);
+									window.location='https://api.whatsapp.com/send?phone=+57300%208492337&text='+dataToSend;
+								}
+							</script>
+							<button type="submit" name="Submit" class="exclusive" onclick="Add();" >
+							   <span>Agregar</span>
+							</button>
+							<button type="submit" name="Submit" class="exclusive2" onclick="Send();" >
+							   <span>Finalizar</span>
 							</button>
 				   </div>
 			   </div>
